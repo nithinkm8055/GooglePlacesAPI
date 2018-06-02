@@ -17,7 +17,7 @@ import java.util.List;
 public class FoodActivity extends ListActivity {
 
     LocationManager locationManager;
-    private static final String API_KEY = "AIzaSyDqJujtaHtUSsg9-LRSG5RFXh9zMvYPDYA";
+    private static final String API_KEY = "add your api key here";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,8 +25,7 @@ public class FoodActivity extends ListActivity {
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         //get current location of user
-        //String latitudeLongitude = new LocationHelper().getLocation(this, locationManager);
-        String latitudeLongitude = "28.632808;77.218276";
+        String latitudeLongitude = new LocationHelper().getLocation(this, locationManager);
         if (null != latitudeLongitude) {
             String[] coordinates = latitudeLongitude.split(";");
 
