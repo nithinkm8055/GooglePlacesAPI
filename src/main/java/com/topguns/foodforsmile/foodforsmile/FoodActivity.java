@@ -60,6 +60,13 @@ public class FoodActivity extends ListActivity {
             dialog.dismiss();
 
             listView.setAdapter(new ArrayAdapter<String>(context, android.R.layout.simple_expandable_list_item_1, placeName));
+            
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    Log.v("PLACE",placeName[i]);
+                }
+            });
         }
 
         @Override
